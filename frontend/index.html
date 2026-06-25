@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CivicPulse — Fix Your City</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand"><span class="pulse-dot"></span><span>CivicPulse</span></div>
+    <div class="nav-links">
+      <a href="map.html">Live Map</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html" class="btn-outline">Login</a>
+      <a href="report.html" class="btn-primary">Report Issue</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">🇮🇳 Built for Indian Cities</div>
+    <h1 class="hero-title">Your City.<br><span class="accent">Your Voice.</span><br>Real Change.</h1>
+    <p class="hero-sub">Report potholes, broken streetlights, water leakage — with AI-powered tracking so nothing gets ignored.</p>
+    <div class="hero-cta">
+      <a href="report.html" class="btn-primary btn-lg">📸 Report an Issue</a>
+      <a href="map.html" class="btn-outline btn-lg">🗺️ View Live Map</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" data-target="1240">0</span><span class="stat-label">Issues Reported</span></div>
+      <div class="stat"><span class="stat-num" data-target="87">0</span><span class="stat-label">% Resolved Rate</span></div>
+      <div class="stat"><span class="stat-num" data-target="5600">0</span><span class="stat-label">Citizens Active</span></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <h2 class="section-title">How it works</h2>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-icon">📸</div><h3>Snap & Report</h3><p>Click a photo. AI auto-categorizes it in seconds.</p></div>
+      <div class="step-card"><div class="step-icon">📍</div><h3>Geo-tagged</h3><p>Location auto-detected. Community verifies and upvotes.</p></div>
+      <div class="step-card"><div class="step-icon">🔔</div><h3>Real-Time Tracking</h3><p>Reported → In Progress → Resolved. Get notified.</p></div>
+      <div class="step-card"><div class="step-icon">🏆</div><h3>Earn Points</h3><p>Active reporters earn badges and climb leaderboard.</p></div>
+    </div>
+  </section>
+
+  <!-- LIVE FEED -->
+  <section class="live-feed">
+    <h2 class="section-title">Recent Issues <span class="live-badge">LIVE</span></h2>
+    <div class="feed-grid" id="feedGrid"></div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="map.html" class="btn-outline">See all on map →</a>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <h2 class="section-title">Browse by Category</h2>
+    <div class="cat-grid">
+      <div class="cat-card"><span>🕳️</span><span>Potholes</span></div>
+      <div class="cat-card"><span>💧</span><span>Water Leakage</span></div>
+      <div class="cat-card"><span>💡</span><span>Streetlights</span></div>
+      <div class="cat-card"><span>🗑️</span><span>Waste</span></div>
+      <div class="cat-card"><span>🌊</span><span>Drainage</span></div>
+      <div class="cat-card"><span>⚠️</span><span>Other</span></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand"><span class="pulse-dot"></span> CivicPulse</div>
+    <p>Built with ❤️ for Vibe2Ship Hackathon 2026</p>
+    <div class="footer-links">
+      <a href="report.html">Report</a>
+      <a href="map.html">Map</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

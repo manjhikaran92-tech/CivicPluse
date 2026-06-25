@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard — CivicPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand"><span class="pulse-dot"></span><span>CivicPulse</span></a>
+    <div class="nav-links">
+      <a href="map.html">Live Map</a>
+      <a href="login.html" class="btn-outline">Login</a>
+      <a href="report.html" class="btn-primary">Report Issue</a>
+    </div>
+  </nav>
+
+  <main class="dashboard-main">
+    <div class="dash-header">
+      <h1>📊 City Dashboard</h1>
+      <select class="form-input" style="width:auto;padding:0.4rem 0.8rem;font-size:0.85rem">
+        <option>Last 7 days</option>
+        <option>Last 30 days</option>
+        <option>All time</option>
+      </select>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-icon">📋</div><div class="kpi-val" data-target="1240">0</div><div class="kpi-label">Total Issues</div></div>
+      <div class="kpi-card"><div class="kpi-icon">✅</div><div class="kpi-val" data-target="1079">0</div><div class="kpi-label">Resolved</div></div>
+      <div class="kpi-card"><div class="kpi-icon">⏳</div><div class="kpi-val" data-target="98">0</div><div class="kpi-label">In Progress</div></div>
+      <div class="kpi-card"><div class="kpi-icon">🔴</div><div class="kpi-val" data-target="63">0</div><div class="kpi-label">Open</div></div>
+      <div class="kpi-card"><div class="kpi-icon">👥</div><div class="kpi-val" data-target="5600">0</div><div class="kpi-label">Citizens</div></div>
+    </div>
+
+    <div class="dash-grid">
+      <div class="dash-section">
+        <h3 class="dash-section-title">Issues by Category</h3>
+        <div class="bar-chart" id="barChart"></div>
+      </div>
+      <div>
+        <div class="dash-section" style="margin-bottom:1.5rem">
+          <h3 class="dash-section-title">🏆 Top Contributors</h3>
+          <div class="leaderboard" id="leaderboard"></div>
+        </div>
+        <div class="dash-section">
+          <h3 class="dash-section-title">📈 Resolution Rate</h3>
+          <div style="text-align:center;padding:1rem 0;position:relative">
+            <svg viewBox="0 0 100 100" width="120" height="120">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#1e2d45" stroke-width="10"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#06B6D4" stroke-width="10"
+                stroke-dasharray="251" stroke-dashoffset="33" stroke-linecap="round"
+                transform="rotate(-90 50 50)"/>
+            </svg>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;color:#F1F5F9">87%</div>
+            <p style="color:var(--text-muted);font-size:0.82rem;margin-top:0.5rem">Resolution Rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

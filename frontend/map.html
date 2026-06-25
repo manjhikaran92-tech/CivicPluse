@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Map — CivicPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="map-page">
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand"><span class="pulse-dot"></span><span>CivicPulse</span></a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html" class="btn-outline">Login</a>
+      <a href="report.html" class="btn-primary">Report Issue</a>
+    </div>
+  </nav>
+
+  <div class="map-layout">
+    <aside class="map-sidebar">
+      <div class="sidebar-header">
+        <h2>Issues Near You</h2>
+        <div class="sidebar-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="open">Open</button>
+          <button class="filter-btn" data-filter="progress">In Progress</button>
+          <button class="filter-btn" data-filter="resolved">Resolved</button>
+        </div>
+      </div>
+      <div class="sidebar-list" id="sidebarList"></div>
+    </aside>
+    <div class="map-area">
+      <div id="map"></div>
+      <div class="map-fab">
+        <a href="report.html" class="btn-primary btn-lg">+ Report Here</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

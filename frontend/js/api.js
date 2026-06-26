@@ -1,9 +1,8 @@
 // =============================================
-// CivicPulse — api.js  (Frontend se Backend connect)
-// Yeh file sabse pehle load karo HTML mein
+// CivicPulse — api.js
 // =============================================
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://civicpluse-backend.onrender.com/api';
 
 // ---- Auth helpers ----
 const getToken = () => localStorage.getItem('cp_token');
@@ -44,13 +43,13 @@ const Issues = {
     return fetch(`${API_BASE}/issues`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
-      body: formData   // FormData for file upload
+      body: formData
     }).then(r => r.json());
   },
-  vote:         (id)          => apiFetch(`/issues/${id}/vote`,    { method: 'PUT' }),
-  updateStatus: (id, status)  => apiFetch(`/issues/${id}/status`,  { method: 'PUT', body: JSON.stringify({ status }) }),
-  comment:      (id, text)    => apiFetch(`/issues/${id}/comment`, { method: 'POST', body: JSON.stringify({ text }) }),
-  delete:       (id)          => apiFetch(`/issues/${id}`,         { method: 'DELETE' }),
+  vote:         (id)         => apiFetch(`/issues/${id}/vote`,    { method: 'PUT' }),
+  updateStatus: (id, status) => apiFetch(`/issues/${id}/status`,  { method: 'PUT', body: JSON.stringify({ status }) }),
+  comment:      (id, text)   => apiFetch(`/issues/${id}/comment`, { method: 'POST', body: JSON.stringify({ text }) }),
+  delete:       (id)         => apiFetch(`/issues/${id}`,         { method: 'DELETE' }),
 };
 
 // ---- Dashboard API ----
@@ -59,3 +58,20 @@ const Dashboard = {
   leaderboard: () => apiFetch('/dashboard/leaderboard'),
   recent:      () => apiFetch('/dashboard/recent'),
 };
+
+// ---- User API ----
+const Users = {
+  getProfile:    ()     => apiFetch('/users/profile'),
+  updateProfile: (body) => apiFetch('/users/profile', { method: 'PUT', body: JSON.stringify(body) }),
+};
+
+// ---- Nav Auth State ----
+const updateNav = () => {
+  const user = getUser();
+  const loginLink = document.querySelector('a[href="login.html"]');
+  if (loginLink && user) {
+    loginLink.textContent = `👤 ${user.name}`;
+  }
+};
+
+document.addEventListener('DOMContentLoaded', updateNav);
